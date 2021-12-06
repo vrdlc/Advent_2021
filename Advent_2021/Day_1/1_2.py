@@ -13,15 +13,20 @@ def count_increases(file):
 
     for x in file:
 
-        while third_num < len(file) - 1:
-            first_trio = file[first_num] + file[sec_num] + file[third_num]
+        while third_num <= len(file) - 1:
+            # print(first_num)
+            # print(sec_num)
+            # print(third_num)
+            # print(len(file))
+            first_trio = int(file[first_num]) + int(file[sec_num]) + int(file[third_num])
+            # print(first_trio)
             first_num += 1
             sec_num += 1
             third_num += 1
-            second_trio = file[first_num] + file[sec_num] + file[third_num]
+            second_trio = int(file[first_num]) + int(file[sec_num]) + int(file[third_num])
             if first_trio < second_trio:
                 increases += 1
-            # print(increases)
+            print(increases)
     print(increases)
 
 
