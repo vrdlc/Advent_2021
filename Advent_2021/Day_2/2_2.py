@@ -6,7 +6,8 @@ txt.close()
 def get_directions(file_input):
     count = 0
     f = 0
-    d = 0
+    aim = 0
+    depth = 0
     final = 0
     while count < len(file_input):
         for direction in file_input:
@@ -14,12 +15,13 @@ def get_directions(file_input):
 
             if direction.rstrip(direction[-1]) == "forward ":
                 f += int(direction[-1])
+                depth = depth + (aim * int(direction[-1]))
             elif direction.rstrip(direction[-1]) == "down ":
-                d += int(direction[-1])
+                aim += int(direction[-1])
             elif direction.rstrip(direction[-1]) == "up ":
-                d -= int(direction[-1])
+                aim -= int(direction[-1])
 
-    final = d * f
+    final = depth * f
     print(final)
 
 
